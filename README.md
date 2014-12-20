@@ -6,7 +6,7 @@ Código:
 
 script.py -h
 
-print:http://puu.sh/dBZCF/5ad454e264.png
+<img src = "http://puu.sh/dBZCF/5ad454e264.png"></img>
 
 Obs:Não é obrigatório usar todas os comandos,tente usar so um :)
 
