@@ -1,11 +1,11 @@
 Versão Atualizada : v0.5 build
-Correções:
---Paginas sem resultado gerava erro
---Erro no comando --paginas
---Pequeno erro quando não sé usava user-agent
---Erro Json Paginas
-Novidades:
---Conexão com Cookies
+Correções:<br>
+--Paginas sem resultado gerava erro<br>
+--Erro no comando --paginas<br>
+--Pequeno erro quando não sé usava user-agent<br>
+--Erro Json Paginas<br>
+Novidades:<br>
+--Conexão com Cookies<br>
 
 ------------------------------
 
