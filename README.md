@@ -23,16 +23,12 @@ script.py --dork=inurl:noticia.php?id=1 --arquivo=meu.txt
 
 Nesse comando acima você recebe 10 resultados
 
+No modo reigelado não coloque numeros depois do = na sua dork,porque o script vai sair adicionando no loop o que da mais resultados exemplo:
 
-script.py --dork=inurl:noticia.php?id=1 --arquivo=meu.txt --paginas=2
-
-Já com este você recebera 20 ,porque 20?
-Porque você vai em 2 paginas e cada pagina da dork contem 10 resultados sendo assim 10+10 = 20 :D
-
-
+Ex:
 script.py --dork=inurl:noticia.php?id= --arquivo=meu.txt --reigelado-mode
 
-No modo reigelado não coloque numeros depois do = na sua dork,porque o script vai sair adicionando no loop o que da mais resultados exemplo:
+
 Loop1:
 noticia.php?id=1
 Loop2:
