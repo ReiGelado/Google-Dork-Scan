@@ -66,9 +66,7 @@ Essa opção ainda esta na beta mais e otima porque a cada conexão que ele cria
 
 Exemplo de comando:
 
-[/i]
-[code]script.py --dork=news.php?id= --reigelado-mode --arquivo=100.txt  --useragent-random[/code]
-[i]
+]script.py --dork=news.php?id= --reigelado-mode --arquivo=100.txt  --useragent-random
 
 Retornaria:
 
@@ -78,7 +76,9 @@ Retornaria:
 Resultado .txt:
 
 <img src = 'http://puu.sh/dFOnw/6389298a88.png' ></img>
-#como vocês podem observar a barrinha de rolar do notepad esta pequena de tantos resultados que o script retornou(esqueci de desligar ehuehue)
+
+Como vocês pode observar ele retornou muitos resultados....
+
 <img src = 'http://puu.sh/dFOsI/2994a9f8e5.png' ></img>
 
 Alguns resultados podem vir errados mais isto e pro lado do google na proxima versão vou desenvolver um script que vai parsear os valores corretos :)
