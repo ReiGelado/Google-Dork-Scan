@@ -66,7 +66,7 @@ Essa opção ainda esta na beta mais e otima porque a cada conexão que ele cria
 
 Exemplo de comando:
 
-]script.py --dork=news.php?id= --reigelado-mode --arquivo=100.txt  --useragent-random
+script.py --dork=news.php?id= --reigelado-mode --arquivo=100.txt  --useragent-random
 
 Retornaria:
 
