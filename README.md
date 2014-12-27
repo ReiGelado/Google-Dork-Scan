@@ -3,9 +3,9 @@ Correções:<br>
 --Nenhuma :) !Não achei Bug"<br>
 Novidades:<br>
 --Opção --paginas removida(não tinha mt utilidade)<br>
---Conexão com Proxy (http,https,socks5,socks4)
---User-Agent Proxy --useragent-proxy="User-Agent"
---Classes Adicionadas,Script mais Organizado
+--Conexão com Proxy (http,https,socks5,socks4)<br>
+--User-Agent Proxy --useragent-proxy="User-Agent"<br>
+--Classes Adicionadas,Script mais Organizado<br>
 
 
 ------------------------------
