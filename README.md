@@ -6,10 +6,11 @@ Novidades:<br>
 --Conexão com Proxy (http,https,socks5,socks4)
 --User-Agent Proxy --useragent-proxy="User-Agent"
 --Classes Adicionadas,Script mais Organizado
+
+
 ------------------------------
 
-Essa versão foi mais pra correção de bugs :) 
-E aproveitem meus doces :p
+Comando script.py -h
 
 Resultado:
 
