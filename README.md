@@ -1,12 +1,11 @@
-Versão Atualizada : v0.5 build
+Versão Atualizada : v0.6
 Correções:<br>
---Paginas sem resultado gerava erro<br>
---Erro no comando --paginas<br>
---Pequeno erro quando não sé usava user-agent<br>
---Erro Json Paginas<br>
+--Nenhuma :) !Não achei Bug"<br>
 Novidades:<br>
---Conexão com Cookies<br>
-
+--Opção --paginas removida(não tinha mt utilidade)<br>
+--Conexão com Proxy (http,https,socks5,socks4)
+--User-Agent Proxy --useragent-proxy="User-Agent"
+--Classes Adicionadas,Script mais Organizado
 ------------------------------
 
 Essa versão foi mais pra correção de bugs :) 
@@ -14,7 +13,7 @@ E aproveitem meus doces :p
 
 Resultado:
 
-<img src= "http://puu.sh/dFMUQ/3d53665e67.png" ></img>
+<img src= "http://puu.sh/dKCgU/38bd120031.png" ></img>
 
 Obs:Não é obrigatório usar todas os comandos,tente usar so um :)
 Ex:
@@ -105,6 +104,45 @@ Exemplo de comando:
 script.py --dork=news.php?id= --reigelado-mode --arquivo=100.txt  --useragent-txt=4.txt
 
 Vai gerar o mesmo resultado dos prints acima :)
+
+Na versão v0.6 adicionei um sisteminha de Proxy :p.
+Os comandos adicionados ao script foram...
+
+--proxy-tipo="http" # ou https , socks5 ou socks4 #Prescisa do comando --proxy-ip
+
+--proxy-ip="127.0.0.1:2424" IP+PORTA #Prescisa do comando --proxy-tipo
+
+--useragent-proxy="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US)" #Não e obrigatorio
+
+User-Agent padrão : Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.53 Safari/525.19
+
+Exemplo de comando:
+
+script.py --dork=inurl:noticia.php?id=  --arquivo=caveiratech.txt --proxy-ip="199.200.120.140:7808" --proxy-tipo="http" --reigelado-mode
+
+Resultado:
+
+<img src = "http://puu.sh/dKCDs/4765e25bbb.png" ></img>
+<img src = "http://puu.sh/dKCG4/bf86601456.png"></img>
+
+Resultado .TXT:
+
+<img src = "http://puu.sh/dKCHX/c005e5cca1.png" ></img>
+
+Exemplo de comando:
+ 
+script.py --dork=inurl:noticia.php?id=  --arquivo=caveiratech.txt --proxy-ip="199.200.120.140:7808" --proxy-tipo="http" --useragent-proxy="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US)" --reigelado-mode
+
+
+Resultado:
+
+<img src = "http://puu.sh/dKD8k/28c439c116.png" ></img>
+<img src = "http://puu.sh/dKDaF/4b8ed0342b.png" ></img>
+
+Resultado .TXT:
+
+<img src = "http://puu.sh/dKDdX/8d4bdec45d.png" ></img>
+<img src = "http://puu.sh/dKDfW/3866053e56.png" ></img>
 
 
 Dica sé você quiser dorks de um pais especifico utilize os dominios dele nas dorks 
