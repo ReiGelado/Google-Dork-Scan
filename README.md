@@ -12,7 +12,7 @@ Comando script.py -h
 
 Resultado:
 
-<img src= "http://puu.sh/dKCgU/38bd120031.png" ></img>
+<img src= "http://puu.sh/dV6eD/7c382cfe16.png" ></img>
 
 Obs:Não é obrigatório usar todas os comandos,tente usar so um :)
 Ex:
