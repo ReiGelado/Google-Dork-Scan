@@ -1,12 +1,10 @@
 Versão Atualizada : v0.6
 Correções:<br>
---Nenhuma :) !Não achei Bug"<br>
+--Verificação de arquivos(caso alguem não baixe...)<br>
+--Erro em uma função da classe ReiGelado(Esqueci uma aspas rsrsr)<br>
 Novidades:<br>
---Opção --paginas removida(não tinha mt utilidade)<br>
---Conexão com Proxy (http,https,socks5,socks4)<br>
---User-Agent Proxy --useragent-proxy="User-Agent"<br>
---Classes Adicionadas,Script mais Organizado<br>
-
+--Adicionando comando --api-antiga que sé conecta a api velha do google.....
+--Adicionado o script que futuramente sera usado para threads no google dork :)(ainda off)
 
 ------------------------------
 
@@ -140,6 +138,43 @@ Resultado .TXT:
 
 <img src = "http://puu.sh/dKDdX/8d4bdec45d.png" ></img>
 <img src = "http://puu.sh/dKDfW/3866053e56.png" ></img>
+
+
+Na versão v0.7 adicionei a opção --api-antiga que sé conecta a versão antiga da api do google....
+Aproveitem ela porque ela não tem limites de conexões então você pode estravassar....
+Lembrando que por padrão ela retorna so 4 resultados então recomendo você usar ela com o comando --reigelado-mode
+Que você tera mais proveito :D
+
+Comando:
+
+script.py --dork=inurl:noticia.php?id=1 --arquivo=github.txt --api-antiga
+
+Resultado:
+
+<img src = "http://puu.sh/dV4Dr/ddf3fdec38.png" ></img>
+<img src = "http://puu.sh/dV4LZ/e375a4fdc0.png" ></img>
+
+.TXT:
+
+<img src = "http://puu.sh/dV4P7/49dc8ac267.png"></img>
+
+Comando:(com --reigelado-mode)
+
+script.py --dork=inurl:noticia.php?id=1 --arquivo=github.txt --api-antiga --reigelado-mode
+
+Resultado:
+
+<img src = "http://puu.sh/dV4Zx/02a616497a.png"></img>
+<img src = "http://puu.sh/dV53b/68f9859eaf.png"></img>
+<img src = "http://puu.sh/dV55h/2cce04db62.png"></img>
+<img src = "http://puu.sh/dV573/915570e941.png"></img>
+E teve mais algunas paginas rsrsrs...
+
+
+.TXT:(Me retornou 49 resultados...:))
+
+<img src = "http://puu.sh/dV5ad/b2f588d85d.png"></img>
+
 
 
 Dica sé você quiser dorks de um pais especifico utilize os dominios dele nas dorks 
