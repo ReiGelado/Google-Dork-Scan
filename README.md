@@ -1,4 +1,4 @@
-Versão Atualizada : v0.6
+Versão Atualizada : v0.7
 Correções:<br>
 --Verificação de arquivos(caso alguem não baixe...)<br>
 --Erro em uma função da classe ReiGelado(Esqueci uma aspas rsrsr)<br>
