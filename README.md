@@ -1,4 +1,4 @@
-<h1>Versão Atualizada : v0.7</h1>
+<h1>Versão Atualizada : v0.8</h1>
 <h2>Correções:<br></h2>
 --Erro que perdia conexao encerra o script,agora reconecta...
 <h2>Novidades:<br></h2>
