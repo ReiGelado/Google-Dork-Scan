@@ -8,6 +8,11 @@ import cookielib
 import urllib2
 from random import choice
 from sys import exit
+from time import sleep
+
+#Vou implementar o veririca vul (oracle,mssql,msacess) na versao v0.9
+erros = { 'SQL': ['SQL syntax','mysql_fetch_array()','mysql_num_rows()','Warning: mysql_fetch_assoc()','Warning: session_start()','Warning: getimagesize()','Warning: is_writable()','Warning: Unknown()'] ,  'ORACLE' : ['Microsoft OLE DB Provider for Oracle'] ,'MS' : ['Microsoft JET Database','ODBC Microsoft Access Driver'] , 'MSSQL' : ['Microsoft OLE DB Provider for SQL Server','Unclosed quotation mark']}
+
 class ReiGelado():
 	def __init__(self):
 		print '[+]Classe ativada....\n'
@@ -49,7 +54,7 @@ class ReiGelado():
 			for txt_rei in open(txt,'r'):
 				reigelado.append(txt_rei.strip())
 		except:
-			print '[+]o arquvo %s nao esta no diretorio do script....' % txt
+			print '[+]o arquivo %s nao esta no diretorio do script....' % txt
 			exit()
 		print '[+]%s Carregado....\n' % txt
 		lalala2 = choice(reigelado)
@@ -112,3 +117,29 @@ class ReiGelado():
 		except:
 				print '[+]Time-Out / ERRO PROXY'
 				exit()
+	def verifica_sqli(self,url,arquivo):
+		print '[+]Carregando a URL : %s\n' % url
+		sleep(2)
+		print '[+]Testando SQL....\n'
+		for a in range(0,8):
+			b = erros['SQL'][a]
+			try:
+				c = urllib2.urlopen(url + "'")
+			except urllib2.HTTPError,e:
+				print '[+]Ocorreu um erro : %s \n' % e.code
+			d = b in c.read()
+			print '[+]Testando Error : %s\n' % b
+			if d == False:
+				print '[+]O site %s \n ' % url
+				print '[+]Nao esta vulneravel.....\n'
+			else:
+				print '[+]O site %s \n ' % url
+				print '[+]O site esta possivelmente vulneravel a Blind SQLI\n'
+				print '[+]Com um banco de dados possivelmente Mysql\n'
+				sleep(2)
+				escrever34 =  open(arquivo,'a')
+				escrever34.write(url +  '\n') 
+				escrever34.close()
+				print '[+]1 dork adicionada no SQLI\n'
+				return '....'
+		return '......'
