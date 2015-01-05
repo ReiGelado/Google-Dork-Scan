@@ -1,10 +1,9 @@
-Versão Atualizada : v0.7
-Correções:<br>
---Verificação de arquivos(caso alguem não baixe...)<br>
---Erro em uma função da classe ReiGelado(Esqueci uma aspas rsrsr)<br>
-Novidades:<br>
---Adicionando comando --api-antiga que sé conecta a api velha do google.....
---Adicionado o script que futuramente sera usado para threads no google dork :)(ainda off)
+<h1>Versão Atualizada : v0.7</h1>
+<h2>Correções:<br></h2>
+--Erro que perdia conexao encerra o script,agora reconecta...
+<h2>Novidades:<br></h2>
+--Adicionado comando --verifica-sqli que testa sé o link que o dork scan acha esta vul a blind sqli...
+--Adicionado --arquivo-sqli que você escolher onde ele vai salvar os links vuls...
 
 ------------------------------
 
@@ -12,7 +11,7 @@ Comando script.py -h
 
 Resultado:
 
-<img src= "http://puu.sh/dV6eD/7c382cfe16.png" ></img>
+<img src= "http://puu.sh/e5tm1/a7de7ea5da.png" ></img>
 
 Obs:Não é obrigatório usar todas os comandos,tente usar so um :)
 Ex:
@@ -174,6 +173,33 @@ E teve mais algunas paginas rsrsrs...
 .TXT:(Me retornou 49 resultados...:))
 
 <img src = "http://puu.sh/dV5ad/b2f588d85d.png"></img>
+
+Na versão v0.8 adicionei o comando --verifica-sqli que verifica sé o site que você pegou com a dork tem alguma vulnerabilidade do tipo blind sqli....
+
+Comando:
+
+googlev0.8.py --dork=inurl:noticia.php?id= --api-antiga --arquivo=1.txt --verifica-sqli --arquivo-sqli=2.txt --reigelado-mode
+
+Resultado:
+
+<img src = "http://puu.sh/e5v8J/ed9c4f2b10.png" ></img>
+<img src = "http://puu.sh/e5viL/7e6076253d.png" ></img>
+<img src = "http://puu.sh/e5vlN/b8ccdc13ba.png" ></img>
+<img src = "http://puu.sh/e5vqf/1fd3dcdc0f.png" ></img>
+<img src = "http://puu.sh/e5vu7/8b9a96f7a4.png" ></img>
+<img src = "http://puu.sh/e5vD9/58b70c20e4.png" ></img>
+
+Provas que estão vul:
+
+<img src = "http://puu.sh/e5vOv/afec0d48c0.png" ></img>
+<img src = "http://puu.sh/e5vUR/9d4cebdcd2.jpg" ></img>
+<img src = "http://puu.sh/e5w3D/53a4962604.png" ></img>
+
+Resultados(vuls):
+
+<img src = "http://puu.sh/e5w9h/68da15f8da.png" ></img>
+
+
 
 
 
