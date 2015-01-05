@@ -7,7 +7,7 @@ import conexao #arquivo local
 import os
 from time import sleep
 from sys import exit
-from random import choice
+from random import choice 
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dork',action = 'store', dest = 'dork' , required = True , help = 'Dork que voce vai utilizar na pesquisa do google :)\nExemplo:\ninurl:noticia.php?id=')
@@ -20,6 +20,10 @@ parser.add_argument('--useragent-escolha',dest = 'user_agent_1',action = 'store'
 parser.add_argument('--useragent-random',dest = 'user_agent_2',action = 'store_true',required = False,help = 'O programa escolhe o user agente de forma randomica :D')
 parser.add_argument('--useragent-txt',dest = 'user_agent_3',action = 'store',required = False,help = 'Voce define um .txt com o UserAgent  o script identifica por linha!')
 parser.add_argument('--api-antiga',dest = 'api_antiga',action = 'store_true',required = False,help = 'Voce pode usar a api antiga do google que so gera 4 resultado por pagina....')
+parser.add_argument('--verifica-sqli',dest = 'sqli',action = 'store_true',required = False , help = 'O script testara as urls em tempo de execucao para verificar se ela contem\nAlgumavulnerabilidade do tipo SQLI')
+parser.add_argument('--arquivo-sqli',dest = 'arquivo_sqli',action = 'store' , required = False, help = 'Arquivo onde voce vai salvar os sites vuls a sqli...')
+parser.set_defaults(arquivo_sqli = "")
+parser.set_defaults(sqli=False)
 parser.set_defaults(api_antiga=False)
 parser.set_defaults(reigelado=False)
 parser.set_defaults(tipo_proxy = "")
@@ -31,6 +35,11 @@ parser.set_defaults(user_agent_3="")
 arguments = parser.parse_args()
 
 falta = 0
+
+if arguments.arquivo_sqli == "":
+	rei = 'rei.txt'
+else:
+	rei = arguments.arquivo_sqli
 
 if os.path.isfile('keys.txt') == False:
 	print '[+]O arquivo keys.txt esta faltando....\n'
@@ -81,12 +90,13 @@ def funcao_acessa_api(url):
 		else:
 			pass
 	except:
-		print '\n[+]ERRO 403 TENTE NOVAMENTE......\n'
-		print '[+]Bye ;)'
+		print '[+]Erro:403\n'
+		print '[+]Utilize o comando --api-antiga :)\n'
+		print '[+]Bye ;)\n'
 		exit()
 
 print '''
-                    ......::::::::Google Dork Scan V0.7 by Rei_Gelado::::::::......
+                    ......::::::::Google Dork Scan V0.8 by Rei_Gelado::::::::......
                     ......::::::::Forum:http://caveiratech.com/forum/::::::::......
                                             EX:
     script.py --dork=inurl:videos_pornos.php?id=1 --arquivo=caveiratech.txt
@@ -161,19 +171,30 @@ if arguments.reigelado == True:
 				reigelado_ct = open(arguments.arquivo,'a')
 				try:
 					reigelado_ct.write(json_reigelado['responseData']['results'][x]['unescapedUrl'] + '\n')
+					if arguments.sqli == False:
+						pass
+					else:
+						ua2 = conexao.ReiGelado()
+						ua2.verifica_sqli(json_reigelado['responseData']['results'][x]['unescapedUrl'],rei)					
 					print '[+]1 dork adicionada....\n'
 				except:
-					print '[+]Opa as dorks acabaram :( que pena...'
-					exit()
-					reigelado_ct.close()
+					print '[+]Erro de conexao....\n'
+					print '[+]Conectando....\n'
+					#exit()
+					#reigelado_ct.close()
 		else:
 			for x in range(0,10):
 				reigelado_ct = open(arguments.arquivo,'a')
 				try:
 					reigelado_ct.write(json_reigelado['items'][x]['link'] + '\n')
+					if arguments.sqli == False:
+						pass
+					else:
+						ua2 = conexao.ReiGelado()
+						ua2.verifica_sqli(json_reigelado['items'][x]['link'],rei)					
 					print '[+]1 dork adicionada......\n'
-				except:
-					print '[+]Opa as dorks acabaram :( que pena...'
+				except KeyError,e:
+					print '[+]Error: %s ' % e.code
 					exit()
 					reigelado_ct.close()
 else:
@@ -185,12 +206,22 @@ if arguments.reigelado == False:
 			for x in range(0,4):
 				escrever = open(arguments.arquivo,'a')
 				escrever.write(json_api['responseData']['results'][x]['unescapedUrl'] + '\n')
+				if arguments.sqli == False:
+					pass
+				else:
+					ua2 = conexao.ReiGelado()
+					ua2.verifica_sqli(json_api['responseData']['results'][x]['unescapedUrl'],rei)
 				print '[+]1 dork adicionada...\n' 
 		else:
 			for x in range(0,10):
 				escrever = open(arguments.arquivo,'a')
 				escrever.write(json_api['items'][x]['link'] + '\n')
-				print '[+]1 dorkm adicionada....\n'
+				if arguments.sqli == False:
+					pass
+				else:
+					ua2 = conexao.ReiGelado()
+					ua2.verifica_sqli(json_api['items'][x]['link'],rei)
+				print '[+]1 dork adicionada...\n' 
 	except:
 		print '[+]Ooopaaaa foram coletadas menos de 10 dorks :c\n'
 		print '[+]Bye\n'
