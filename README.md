@@ -14,7 +14,7 @@ Sé gostou da ferramenta contribua com ela ou simplesmente use ela :D<br>
 
 ------------------------------
 Sé você veio atras de ajuda vá no arquivo....
-Usage.md :)
+<a href = "https://github.com/ReiGelado/Google-Dork-Scan/blob/master/Usage.md" >Usage.md :)<a/>
 ------------------------------
 Acho que eu mereço um Star no meu projeto do Git né <3 
 
