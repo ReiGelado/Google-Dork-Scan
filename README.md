@@ -1,3 +1,10 @@
+<h1>Google Dork Scan<h1>
+E uma ferramenta que pega links do googles por meio de dork e da api dele...
+E testa sé aqueles links estão vulneraveis a blind sqli :)
+Foi escrita e esta sendo escrita em Python 2.x  rsrsr
+Bom acho que e isso rsrs :)
+Sé gostou da ferramenta contribua com ela ou simplesmente use ela :D
+
 <h1>Versão Atualizada : v0.8</h1>
 <h2>Correções:<br></h2>
 --Erro que perdia conexao encerra o script,agora reconecta...
