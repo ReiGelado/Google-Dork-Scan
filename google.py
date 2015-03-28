@@ -158,6 +158,7 @@ print '[+]###################################[+]\n'
 sleep(3)
 n = 0
 t = 0
+erro_de_conexao = 0
 if arguments.reigelado == True:
 	print '[+]Iniciando.....\n'
 	while True:
@@ -170,16 +171,25 @@ if arguments.reigelado == True:
 			for x in range(0,4):
 				reigelado_ct = open(arguments.arquivo,'a')
 				try:
-					reigelado_ct.write(json_reigelado['responseData']['results'][x]['unescapedUrl'] + '\n')
-					if arguments.sqli == False:
-						pass
+					if json_reigelado['responseDetails'] == 'Suspected Terms of Service Abuse. Please see http://code.google.com/apis/errors':
+						print('[+]Conexao bloqueada pelo google,tente outra dork....\n')
 					else:
-						ua2 = conexao.ReiGelado()
-						ua2.verifica_sqli(json_reigelado['responseData']['results'][x]['unescapedUrl'],rei)					
-					print '[+]1 dork adicionada....\n'
+						reigelado_ct.write(json_reigelado['responseData']['results'][x]['unescapedUrl'] + '\n')
+						if arguments.sqli == False:
+							pass
+						else:
+							ua2 = conexao.ReiGelado()
+							ua2.verifica_sqli(json_reigelado['responseData']['results'][x]['unescapedUrl'],rei)					
+						print '[+]1 dork adicionada....\n'
 				except:
 					print '[+]Erro de conexao....\n'
-					print '[+]Conectando....\n'
+					erro_de_conexao = erro_de_conexao +  1
+					if erro_de_conexao == 10:
+						print '[+]Api do google off-line no momento ou Dork sem resultado....\n'
+						print '[+]Tente mais tarde  :)\n'
+						exit()
+					else:
+						print '[+]Conectando....\n'
 					#exit()
 					#reigelado_ct.close()
 		else:
