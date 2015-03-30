@@ -96,7 +96,7 @@ def funcao_acessa_api(url):
 		exit()
 
 print '''
-                    ......::::::::Google Dork Scan V0.9 build 1 by Rei_Gelado::::::::......
+                    ......::::::::Google Dork Scan V0.8 by Rei_Gelado::::::::......
                     ......::::::::Forum:http://caveiratech.com/forum/::::::::......
                                             EX:
     script.py --dork=inurl:videos_pornos.php?id=1 --arquivo=caveiratech.txt
@@ -146,7 +146,7 @@ try:
 		print '[+]Resultados:%s\n'% json_api['responseData']['cursor']['estimatedResultCount']
 	else:
 		print '[+]Resultados:%s paginas\n' % json_api['queries']["nextPage"][0]['totalResults']
-except KeyError:
+except:
 	print '[+]###################################[+]\n'
 	print '[+]Infezlimente a dork que voce pesquisou nao teve resultados na api :('
 	exit()
