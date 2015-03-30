@@ -5,7 +5,7 @@ Foi escrita e esta sendo escrita em Python 2.x  rsrsr<br>
 Bom acho que e isso rsrs :)<br>
 Sé gostou da ferramenta contribua com ela ou simplesmente use ela :D<br>
 
-<h1>Versão Atualizada : v0.8</h1>
+<h1>Versão Atualizada : v0.9 build 2</h1>
 <h2>Correções:<br></h2>
 --Erro que perdia conexao encerra o script,agora reconecta...
 <h2>Novidades:<br></h2>
