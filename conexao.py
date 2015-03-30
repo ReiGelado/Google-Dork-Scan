@@ -127,6 +127,7 @@ class ReiGelado():
 				c = urllib2.urlopen(url + "'")
 			except urllib2.HTTPError,e:
 				print '[+]Ocorreu um erro : %s \n' % e.code
+				return 'Impossivel completar a request...'
 			d = b in c.read()
 			print '[+]Testando Error : %s\n' % b
 			if d == False:
